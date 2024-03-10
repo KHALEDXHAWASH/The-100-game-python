@@ -1,0 +1,29 @@
+def play_100_game():
+    total = 0
+    while total < 100:
+        p1_move = int(input("p1 Enter a number from 1 to 10: "))
+        if p1_move < 1 or p1_move > 10:
+            print("Invalid input. Please enter a number from 1 to 10.")
+            continue
+        total += p1_move
+        print("The Total now is:", total)
+        if total >= 100:
+            print("p1 is the winner")
+            break
+        
+        p2_move = int(input("Enter p2's move (1 to 10): "))
+        if p2_move < 1 or p2_move > 10:
+            print("Invalid input for p2's move. Please enter a number from 1 to 10.")
+            continue
+        
+        if total + p2_move > 100:
+            print("Invalid move. The total would exceed 100. Please choose a smaller number.")
+            continue
+        
+        total += p2_move
+        print("Total:", total)
+        if total >= 100:
+            print("p2 is the winner")
+            break
+
+play_100_game()
